@@ -4,4 +4,10 @@
     <title></title>
 </head>
 <body>
-Je suis le body
+<?= HtmlHelper::link('pages', 'home', 'Accueil')?>
+<?= HtmlHelper::link('pages', 'about', 'A propos')?>
+
+| Adresses :
+<?= HtmlHelper::link('addresses', 'index', 'Liste')?>
+<?= HtmlHelper::link('addresses', 'add', 'Créer')?>
+<hr>

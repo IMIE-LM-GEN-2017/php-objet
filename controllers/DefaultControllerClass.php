@@ -6,6 +6,10 @@
  * Classe de controlleur générique
  */
 class DefaultControllerClass{
+    /**
+     * @var array Liste des actions interdites
+     */
+    public $actionsBlacklist=[];
 
     /**
      * DefaultControllerClass constructor.
