@@ -2,12 +2,17 @@
 
 require_once 'DefaultControllerClass.php';
 
+/**
+ * Class PagesController
+ *
+ * Pages "statiques"
+ */
 class PagesController extends DefaultControllerClass
 {
     /**
      * @var array Liste des actions interdites
      */
-    public $actionsBlacklist=[
+    public $actionsBlacklist = [
         'index',
         'view',
         'delete',
@@ -26,7 +31,8 @@ class PagesController extends DefaultControllerClass
     /**
      * Page "A propos"
      */
-    public function about(){
+    public function about()
+    {
 
     }
 

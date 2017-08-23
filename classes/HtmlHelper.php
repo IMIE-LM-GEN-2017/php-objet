@@ -5,20 +5,14 @@ class HtmlHelper
     /**
      * Créée un lien adapté au "framework"
      *
-     * @param $controleur Nom du controlleur
+     * @param $controller Nom du controlleur
      * @param $action Action a executer
-     * @param $titre Titre du lien
+     * @param $title Titre du lien
      * @param array $options Liste d'options pour le lien
      * @return string
      */
-    public static function link(
-        $controleur,
-        $action,
-        $titre,
-        $options = []
-    ) {
-        return '<a href="index.php?c=' . $controleur
-            . '&amp;a=' . $action . '">'
-            . $titre . '</a>';
+    public static function link($controller, $action, $title, $options = [])
+    {
+        return '<a href="index.php?c=' . $controller . '&amp;a=' . $action . '">' . $title . '</a>';
     }
 }
