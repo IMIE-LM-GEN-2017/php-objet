@@ -5,5 +5,3 @@
 </head>
 <body>
 Je suis le body
-</body>
-</html>

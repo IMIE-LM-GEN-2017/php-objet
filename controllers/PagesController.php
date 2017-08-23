@@ -12,4 +12,11 @@ class PagesController extends DefaultControllerClass
 
     }
 
+    /**
+     * Page "A propos"
+     */
+    public function about(){
+
+    }
+
 }
