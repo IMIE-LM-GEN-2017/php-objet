@@ -46,7 +46,7 @@ class DefaultModelClass
         $results = mysqli_query($this->connexion, $query);
 
         if (!$results) {
-            die('Erreur SQL :<pre>' . mysqli_error() . '</pre>');
+            die('Erreur SQL :<pre>' . mysqli_error($this->connexion) . '</pre>');
         }
 
         // Renvoi des resultats
