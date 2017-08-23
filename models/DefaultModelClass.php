@@ -20,7 +20,7 @@ class DefaultModelClass
     /**
      * @var mysqli Connection SQL
      */
-    protected $connexion = null;
+    protected $connection = null;
 
     /**
      * DefaultModelClass constructor.
@@ -30,7 +30,7 @@ class DefaultModelClass
      */
     public function __construct()
     {
-        $this->connexion = DBClass::$connection;
+        $this->connection = DBClass::$connection;
     }
 
     /**
@@ -43,10 +43,10 @@ class DefaultModelClass
         // Requête SQL
         $query = 'SELECT * FROM ' . $this->tableName;
         // Execution
-        $results = mysqli_query($this->connexion, $query);
+        $results = mysqli_query($this->connection, $query);
 
         if (!$results) {
-            die('Erreur SQL :<pre>' . mysqli_error($this->connexion) . '</pre>');
+            die('Erreur SQL :<pre>' . mysqli_error($this->connection) . '</pre>');
         }
 
         // Renvoi des resultats
