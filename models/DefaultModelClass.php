@@ -13,12 +13,22 @@ class DefaultModelClass
     protected $fields = [];
 
     /**
+     * @var array Liste des entités
+     */
+    protected $data = [];
+
+    /**
      * @var string Nom de la table
      */
     protected $tableName = '';
 
     /**
-     * @var mysqli Connection SQL
+     * @var string Entité liée
+     */
+    protected $entityName = '';
+
+    /**
+     * @var PDOStatement Connection SQL
      */
     protected $connection = null;
 
@@ -30,7 +40,14 @@ class DefaultModelClass
      */
     public function __construct()
     {
-        $this->connection = DBClass::$connection;
+        // Chargement de la classe d'entité correspondante.
+        $entityFile = 'entities/' . $this->entityName . '.php';
+        if (file_exists($entityFile)) {
+            require_once($entityFile);
+            $this->connection = DBClass::$connection;
+        } else {
+            die('Entité introuvable ('.$entityFile.')');
+        }
     }
 
     /**
@@ -43,14 +60,15 @@ class DefaultModelClass
         // Requête SQL
         $query = 'SELECT * FROM ' . $this->tableName;
         // Execution
-        $results = mysqli_query($this->connection, $query);
+        $results = $this->connection->query($query);
 
-        if (!$results) {
-            die('Erreur SQL :<pre>' . mysqli_error($this->connection) . '</pre>');
+        // Création des entités
+        foreach($results as $line){
+            $this->data[] = new $this->entityName($line);
         }
 
         // Renvoi des resultats
-        return $results;
+        return $this->data;
     }
 }
 

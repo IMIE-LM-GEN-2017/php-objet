@@ -2,6 +2,26 @@
 <?= HtmlHelper::link('employees', 'add', 'Nouveau employe') ?>
 <hr>
 <?php
+while($line=mysqli_fetch_assoc($resultats)){
+    var_dump($line);
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+}
 // Les résultats sont disponibles dans la
 // variable $resultats
 if (mysqli_num_rows($resultats) === 0) {

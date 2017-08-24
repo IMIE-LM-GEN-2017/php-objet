@@ -15,4 +15,23 @@ class AddressesModel extends DefaultModelClass
      * @var string Nom de la table dans la base
      */
     public $tableName = 'adresses';
+
+    /**
+     * @var string Entité liée
+     */
+    protected $entityName = 'AddressEntity';
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

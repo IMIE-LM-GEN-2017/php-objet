@@ -6,14 +6,25 @@ class HtmlHelper
      * Créée un lien adapté au "framework"
      *
      * @param string $controller Nom du controlleur
-     * @param string$action Action a executer
+     * @param string $action Action a executer
      * @param string $title Titre du lien
      * @param array $options Liste d'options pour le lien
      * @return string
      */
     public static function link($controller, $action, $title, $options = [])
     {
-        return '<a href="index.php?c=' . $controller . '&amp;a=' . $action . '">' . $title . '</a>';
+        return '<a href="' . self::url($controller, $action) . '">' . $title . '</a>';
+    }
+
+    /**
+     * Créée une URL
+     * @param $controller Nom du controleur
+     * @param $action Nom de l'action
+     * @return string URL
+     */
+    public static function url($controller, $action)
+    {
+        return 'index.php?c=' . $controller . '&amp;a=' . $action;
     }
 
     /**
@@ -45,7 +56,7 @@ class HtmlHelper
         $table .= '</thead>';
         // Ouverture du body
         $table .= '<tbody>';
-        while ($line = mysqli_fetch_assoc($lines)) {
+        foreach ($lines as $line) {
             $table .= '<tr>';
             if ($controllerName !== null) {
                 $table .= '<td>';
@@ -55,7 +66,7 @@ class HtmlHelper
                 $table .= '</td>';
             }
             foreach ($fieldNames as $field) {
-                $table .= '<td>' . $line[$field] . '</td>';
+                $table .= '<td>' . $line->$field . '</td>';
             }
             $table .= '</tr>';
         }

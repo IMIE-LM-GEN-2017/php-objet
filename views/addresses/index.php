@@ -4,8 +4,7 @@
 <?php
 // Les résultats sont disponibles dans la
 // variable $resultats
-
-if (mysqli_num_rows($resultats) === 0) {
+if (count($resultats) === 0) {
     echo "Pas de résultats";
 } else {
     echo HtmlHelper::table(['id', 'nom', 'cp', 'ville'], $resultats, 'addresses');
