@@ -32,7 +32,8 @@ class DefaultControllerClass
     {
         if ($this->modelName !== null) {
             $model = $this->loadModel($this->modelName);
-            var_dump($model->findAll());
+
+            return $model->findAll();
         } else {
             die('Ce controleur n\'est pas associé à une table');
         }
