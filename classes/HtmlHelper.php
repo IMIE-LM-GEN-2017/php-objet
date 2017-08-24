@@ -60,9 +60,9 @@ class HtmlHelper
             $table .= '<tr>';
             if ($controllerName !== null) {
                 $table .= '<td>';
-                $table .= self::link($controllerName, 'delete', 'Supprimer');
+                $table .= self::link($controllerName, 'delete', '<i class="fa fa-trash"></i>');
                 $table .= ' ';
-                $table .= self::link($controllerName, 'edit', 'Editer');
+                $table .= self::link($controllerName, 'edit', '<i class="fa fa-pencil"></i>');
                 $table .= '</td>';
             }
             foreach ($fieldNames as $field) {

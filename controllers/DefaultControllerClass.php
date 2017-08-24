@@ -58,7 +58,9 @@ class DefaultControllerClass
             $model = $this->loadModel($this->modelName);
 
             if (count($_POST) > 0) {
-                return $model->save($_POST);
+                if($model->save($_POST)){
+                    return ['ok' => true];
+                }
             }
         } else {
             die('Ce controleur n\'est pas associé à une table');
