@@ -54,7 +54,15 @@ class DefaultControllerClass
      */
     public function add()
     {
+        if ($this->modelName !== null) {
+            $model = $this->loadModel($this->modelName);
 
+            if (count($_POST) > 0) {
+                return $model->save($_POST);
+            }
+        } else {
+            die('Ce controleur n\'est pas associé à une table');
+        }
     }
 
     /**

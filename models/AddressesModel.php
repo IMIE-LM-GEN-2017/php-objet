@@ -10,7 +10,7 @@ class AddressesModel extends DefaultModelClass
     /**
      * @var array Liste des champs
      */
-    public $fields = [];
+    public $fields = ['id', 'nom', 'cp', 'ville'];
     /**
      * @var string Nom de la table dans la base
      */
