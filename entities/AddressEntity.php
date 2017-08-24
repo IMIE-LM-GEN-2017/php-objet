@@ -1,6 +1,10 @@
 <?php
 
 
+namespace Studio321\Entity;
+
+use Studio321\Entity\DefaultEntityClass;
+
 /**
  * Class AddressEntity
  *

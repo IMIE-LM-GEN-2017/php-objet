@@ -1,5 +1,7 @@
 <?php
 
+namespace Studio321\Controller;
+
 /**
  * Class DefaultControllerClass
  *
@@ -58,7 +60,7 @@ class DefaultControllerClass
             $model = $this->loadModel($this->modelName);
 
             if (count($_POST) > 0) {
-                if($model->save($_POST)){
+                if ($model->save($_POST)) {
                     return ['ok' => true];
                 }
             }

@@ -2,7 +2,7 @@
 /*
  * Chargement des différents fichiers nécessaires
  */
-require_once 'includes.php';
+require_once 'vendor/autoload.php';
 
 /*
  * Connexion à la base de données

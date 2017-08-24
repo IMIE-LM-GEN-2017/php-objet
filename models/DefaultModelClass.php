@@ -1,5 +1,7 @@
 <?php
 
+namespace Studio321\Model;
+
 /**
  * Class DefaultModelClass
  *
