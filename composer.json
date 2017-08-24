@@ -1,0 +1,15 @@
+{
+  "name": "studio321/framework",
+  "description": "Petit framework pour decouvrir le modele MVC",
+  "type": "project",
+  "license": "MIT",
+  "require": {},
+  "autoload": {
+    "classmap": [
+      "classes",
+      "controllers",
+      "entities",
+      "models"
+    ]
+  }
+}
