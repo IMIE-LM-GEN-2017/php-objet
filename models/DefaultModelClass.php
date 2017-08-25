@@ -2,6 +2,8 @@
 
 namespace Studio321\Model;
 
+use Studio321\Classes\DBClass;
+
 /**
  * Class DefaultModelClass
  *
@@ -42,14 +44,7 @@ class DefaultModelClass
      */
     public function __construct()
     {
-        // Chargement de la classe d'entité correspondante.
-        $entityFile = 'entities/' . $this->entityName . '.php';
-        if (file_exists($entityFile)) {
-            require_once($entityFile);
-            $this->connection = DBClass::$connection;
-        } else {
-            die('Entité introuvable (' . $entityFile . ')');
-        }
+        $this->connection = DBClass::$connection;
     }
 
     /**
@@ -66,7 +61,8 @@ class DefaultModelClass
 
         // Création des entités
         foreach ($results as $line) {
-            $this->data[] = new $this->entityName($line);
+            $entityClass = 'Studio321\\Entity\\'.$this->entityName;
+            $this->data[] = new $entityClass($line);
         }
 
         // Renvoi des resultats
