@@ -1,1 +1,0 @@
-<h1>Edition d'un poulet</h1>

@@ -1,19 +1,8 @@
-<?php
-use Studio321\Classes\HtmlHelper;
-?>
 <h1>Création d'une adresse</h1>
 
-<?php
-if (isset($resultats['ok']) && $resultats['ok']):
-    ?>
-    <div class="alert alert-success">
-        Adresse sauvegardée avec succès.
-    </div>
-    <?php
-endif;
-?>
-<form action="<?= HtmlHelper::url('addresses', 'add') ?>"
-      method="POST">
+<?php var_dump($results) ?>
+
+<form action="?c=addresses&a=add" method="POST">
     <div class="form-group">
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" class="form-control"><br>

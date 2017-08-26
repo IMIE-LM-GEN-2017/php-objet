@@ -13,7 +13,7 @@ use PDO;
 class DBClass
 {
     /**
-     * @var mysqli Objet représentant la connexion
+     * @var PDO Objet représentant la connexion
      */
     public static $connection = null;
 
@@ -51,14 +51,6 @@ class DBClass
                 . $error->getMessage()
                 . '</pre>');
         }
-
-    }
-
-    /**
-     * Déconnexion de la base
-     */
-    public static function disconnect()
-    {
 
     }
 }

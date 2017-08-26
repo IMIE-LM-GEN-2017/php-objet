@@ -1,1 +1,0 @@
-<h1>Affichage d'un poulet</h1>

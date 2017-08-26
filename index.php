@@ -14,8 +14,8 @@ DBClass::connect();
 /*
  * Valeurs par défaut
  */
-$controller = 'pages';
-$action = 'home';
+$controller = 'addresses';
+$action = 'index';
 
 /*
  * Choix du controleur suivant la valeur 'c' de la querystring
@@ -33,41 +33,42 @@ if (isset($_GET['a']) && !empty($_GET['a'])) {
 /*
  * Détermination du "nom" du controleur que l'on veut charger:
  */
-$controllerName = ucfirst($controller) . 'Controller';
-
-$className = 'Studio321\\Controller\\' . $controllerName;
+$controllerNamespace = 'Studio321\\Controller\\' . ucfirst($controller) . 'Controller';
 // Création d'une instance de ce controleur
-$finalController = new $className();
+$controllerInstance = new $controllerNamespace();
 
-// Test de l'existence de la méthode (action) dans le controlleur.
-// La méthode ne doit pas être blacklistée.
-if (method_exists($finalController, $action)
-    && !in_array($action, $finalController->actionsBlacklist)
-) {
-    $resultats = $finalController->$action();
+// Résultats renvoyés par l'action du controleur
+$results = $controllerInstance->$action();
 
+/*
+ * On prépare la vue
+ */
+$fichierVue = "views/$controller/$action.php";
+
+// Si la vue existe, on continue
+if (file_exists($fichierVue)) {
     /*
-     * On prépare la vue
+     * On affiche l'ensemble
      */
-    $fichierVue = 'views/'
-        . $controller
-        . '/'
-        . $action . '.php';
-
-    // Si la vue existe, on continue
-    if (file_exists($fichierVue)) {
-        /*
-         * On affiche l'ensemble
-         */
-        include 'views/header.php';
-        include $fichierVue;
-        include 'views/footer.php';
-    } else {
-        die('500 - Vue non trouvée (' . $fichierVue . ')');
-    }
+    include 'views/header.php';
+    include $fichierVue;
+    include 'views/footer.php';
 } else {
-    die('404 - Action introuvable ('
-        . $controllerName
-        . '::'
-        . $action . ')');
+    die('500 - Vue non trouvée (' . $fichierVue . ')');
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

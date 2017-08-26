@@ -1,1 +1,0 @@
-<h1>Affichage d'un employe</h1>

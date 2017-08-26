@@ -1,7 +1,3 @@
-<?php
-use Studio321\Classes\HtmlHelper;
-
-?>
 <!doctype HTML>
 <html>
 <head>
@@ -25,28 +21,7 @@ use Studio321\Classes\HtmlHelper;
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li><?= HtmlHelper::link('pages', 'home', 'Accueil') ?></li>
-            <li><?= HtmlHelper::link('pages', 'about', 'A propos') ?></li>
-
-            <li><a class="noClick">Adresses :</a></li>
-            <li><?= HtmlHelper::link('addresses', 'index', '<i class="fa fa-list"></i>') ?></li>
-            <li><?= HtmlHelper::link('addresses', 'add', '<i class="fa fa-plus"></i>') ?></li>
-
-            <li><a class="noClick">Dirigeants :</a></li>
-            <li><?= HtmlHelper::link('leaders', 'index', '<i class="fa fa-list"></i>') ?></li>
-            <li><?= HtmlHelper::link('leaders', 'add', '<i class="fa fa-plus"></i>') ?></li>
-
-            <li><a class="noClick">Fermes :</a></li>
-            <li><?= HtmlHelper::link('farms', 'index', '<i class="fa fa-list"></i>') ?></li>
-            <li><?= HtmlHelper::link('farms', 'add', '<i class="fa fa-plus"></i>') ?></li>
-
-            <li><a class="noClick">Employés :</a></li>
-            <li><?= HtmlHelper::link('employees', 'index', '<i class="fa fa-list"></i>') ?></li>
-            <li><?= HtmlHelper::link('employees', 'add', '<i class="fa fa-plus"></i>') ?></li>
-
-            <li><a class="noClick">Poulets :</a></li>
-            <li><?= HtmlHelper::link('chickens', 'index', '<i class="fa fa-list"></i>') ?></li>
-            <li><?= HtmlHelper::link('chickens', 'add', '<i class="fa fa-plus"></i>') ?></li>
+            <li><a href="?a=index&amp;c=addresses">Adresses</a></li>
         </ul>
     </div>
 </nav>

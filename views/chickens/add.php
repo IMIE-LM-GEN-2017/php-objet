@@ -1,1 +1,0 @@
-<h1>Création d'un poulet</h1>

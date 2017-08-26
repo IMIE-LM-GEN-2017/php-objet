@@ -1,1 +1,0 @@
-<h1>Création d'un dirigeant</h1>
